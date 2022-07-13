@@ -32,8 +32,8 @@ public class Application {
 
     private static void omdbAPI(){
         CompletableFuture.supplyAsync(() ->
-                        ApiUtils.serviceCall("http://www.omdbapi.com/?t=batman&apikey=412d3ea1", Omdb.class))
-                .thenAccept(t -> System.out.println("Filme: " + t.getTitle()));
+                        ApiUtils.serviceCall("http://www.omdbapi.com/?apikey=412d3ea1&t=batman", Omdb.class))
+                .thenAccept(t -> System.out.println(t.toString()));
     }
 
     private static void chuckNorrisApi(){
